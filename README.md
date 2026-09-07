@@ -24,63 +24,25 @@ glm2bin 功能：格雷码转二进制
 
 glm2dex 功能：格雷码转十进制
 
-fast_pow 功能：快速幂
-
 base_conversion 功能：进制转换将十进制x转换成y进制
 
 base_conversion 功能：进制转换将二进制str x转换成十进制
-
-swap 功能：交换a和b
-
-swap1 功能：交换a和b
-
-swap2 功能：交换a和b
 
 factorial_recursion 功能：阶乘
 
 fibonacci_recursion 功能：求斐波那契的第n项值
 
-pow 功能：求a的b次方
-
 ### date.py
 
 month_first_day 功能：求当前月第一天的星期
 
-leap_year 功能：判断是不是闰年
-
-month_day 功能：求月份天数
-
-### sort.py
-
-bubble_sort 功能:冒泡排序
-
-bucket_sort 功能:桶排序
-
-selection_sort 功能:选择排序
-
-insertion_sort 功能:插入排序
-
-shell_sort 功能:希尔排序
-
-merge_sort 功能:归并排序
-
-quick_sort 功能:快速排序
-
-sort 功能:排序
-
-### stack.py
-
-class static 功能：栈
-
-### queue.py
-
-class queue 功能：队列
+month_length 功能：求月份天数
 
 ### linked_list.py
 
-class General_Linked_list 功能：单向链表
+class GeneralLinkedList 功能：单向链表
 
-class Cycle_Linked_list 功能：循环链表
+class CycleLinkedList 功能：循环链表
 
 ### graghic.py
 
@@ -96,3 +58,20 @@ class Parallelogram 功能：平行四边形
 
 class Trapezoid 功能：梯形
 
+## 更新日志
+
+- 0.2
+  - main.py
+    - 移除了 fast_pow 和 pow，请使用 ** 或 math.pow
+    - 移除了 swap, swap1 和 swap2
+  - date.py
+    - 移除了 leap_year，请使用 calendar.isleap
+    - 重命名 month_day -> month_length，并且现在这个函数不再具有默认值
+  - linked_list.py
+    - 重命名 General_Linked_list -> GeneralLinkedList
+    - 重命名 Cycle_Linked_list -> CycleLinkedList
+  - graghic.py
+    - 更新了 graghic.py 的内部实现，变化较大
+  - 移除了整个 stack.py，请使用列表
+  - 移除了整个 queue.py，请使用 queue.Queue
+  - 移除了整个 sort.py，请使用 sorted
