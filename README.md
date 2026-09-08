@@ -10,60 +10,49 @@ pip install mypytool
 
 ### main.py
 
-perfect_square_plus_gs 功能：完全平方和公式
-
-perfect_square_plus_z 功能：完全平方和值
-
-perfect_square_sub_gs 功能：完全平方差公式
-
-perfect_square_sub_z 功能：完全平方差值
-
-glm 功能：十进制转格雷码
-
-glm2bin 功能：格雷码转二进制
-
-glm2dex 功能：格雷码转十进制
-
-base_conversion 功能：进制转换将十进制x转换成y进制
-
-base_conversion 功能：进制转换将二进制str x转换成十进制
-
-factorial_recursion 功能：阶乘
-
-fibonacci_recursion 功能：求斐波那契的第n项值
+- perfect_square_plus_gs 功能：完全平方和公式
+- perfect_square_plus_z 功能：完全平方和值
+- perfect_square_sub_gs 功能：完全平方差公式
+- perfect_square_sub_z 功能：完全平方差值
+- bytes2gray 功能：以格雷码形式编码
+- gray2bytes 功能：解码格雷码
+- base_conversion 功能：进制转换将十进制x转换成y进制
+- base_conversion 功能：进制转换将二进制str x转换成十进制
+- factorial_recursion 功能：阶乘
+- fibonacci_recursion 功能：求斐波那契的第n项值
 
 ### date.py
 
-month_first_day 功能：求当前月第一天的星期
-
-month_length 功能：求月份天数
+- month_first_day 功能：求当前月第一天的星期
+- month_length 功能：求月份天数
 
 ### linked_list.py
 
-class GeneralLinkedList 功能：单向链表
-
-class CycleLinkedList 功能：循环链表
+- class GeneralLinkedList 功能：单向链表
+- class CycleLinkedList 功能：循环链表
 
 ### graghic.py
 
-class Circle 功能：圆
-
-class Square 功能：正方形
-
-class Rectangle 功能：长方形
-
-class Triangle 功能：三角形
-
-class Parallelogram 功能：平行四边形
-
-class Trapezoid 功能：梯形
+- class Circle 功能：圆
+- class Square 功能：正方形
+- class Rectangle 功能：长方形
+- class Triangle 功能：三角形
+- class Parallelogram 功能：平行四边形
+- class Trapezoid 功能：梯形
 
 ## 更新日志
 
 - 0.2
   - main.py
-    - 移除了 fast_pow 和 pow，请使用 ** 或 math.pow
-    - 移除了 swap, swap1 和 swap2
+    - 移除了 `fast_pow` 和 `pow`，请使用 `**` 或 `math.pow`
+    - 移除了 `swap`, `swap1` 和 `swap2`
+    - 调整了 `perfect_square_plus_gs` / `perfect_square_plus_z` / `perfect_square_sub_gs` / `perfect_square_sub_z`
+      - 所有参数列表由 `(x, y)` 改为 `(a, b)`
+      - `perfect_square_plus_gs` / `perfect_square_sub_gs` 将应当返回一个合法的python表达式
+    - 添加了 `bytes2gray` 和 `gray2bytes` 函数，作用稍后提到
+    - 移除了 `glm` 函数，请使用 `list(map(int, bin(int.from_bytes(bytes2gray(int.to_bytes())))[2:]))`（这恰巧说明了之前的实现有多么的不正确）
+    - 移除了 `glm2bin` 函数，请使用 `list(map(int, bin(int.from_bytes(gray2bytes(int("".join(map(str, )), base=2).to_bytes())))[2:]))`
+    - 移除了 `glm2dex` 函数，请使用 `int.from_bytes(gray2bytes(int("".join(map(str, )), base=2).to_bytes()))`
   - date.py
     - 移除了 leap_year，请使用 calendar.isleap
     - 重命名 month_day -> month_length，并且现在这个函数不再具有默认值
