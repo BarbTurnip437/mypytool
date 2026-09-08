@@ -3,7 +3,7 @@ import math
 from typing import Protocol
 
 
-class BaseShape(Protocol):
+class _BaseShape(Protocol):
     @property
     def area(self) -> float: ...
 
@@ -11,7 +11,7 @@ class BaseShape(Protocol):
     def perimeter(self) -> float: ...
 
 
-class Circle(BaseShape):
+class Circle(_BaseShape):
     def __init__(self, radius):
         self.radius = radius
 
@@ -24,7 +24,7 @@ class Circle(BaseShape):
         return math.pi * (2 * self.radius)
 
 
-class Square(BaseShape):
+class Square(_BaseShape):
     def __init__(self, length):
         self.length = length
 
@@ -37,7 +37,7 @@ class Square(BaseShape):
         return 4 * self.length
 
 
-class Rectangle(BaseShape):
+class Rectangle(_BaseShape):
     def __init__(self, length, width):
         self.length = length
         self.width = width
@@ -51,7 +51,7 @@ class Rectangle(BaseShape):
         return (self.length + self.width) * 2
 
 
-class Triangle(BaseShape):
+class Triangle(_BaseShape):
     def __init__(self, a, h, b, c):
         self.a = a
         self.b = b
@@ -67,7 +67,7 @@ class Triangle(BaseShape):
         return self.a + self.b + self.c
 
 
-class Parallelogram(BaseShape):
+class Parallelogram(_BaseShape):
     def __init__(self, a, b, h):
         self.a = a
         self.b = b
@@ -82,7 +82,7 @@ class Parallelogram(BaseShape):
         return self.a * 2 + self.b * 2
 
 
-class Trapezoid(BaseShape):
+class Trapezoid(_BaseShape):
     def __init__(self, a, b, h, c, d):
         self.a = a
         self.b = b

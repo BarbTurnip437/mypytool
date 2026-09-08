@@ -16,7 +16,7 @@ pip install mypytool
 - perfect_square_sub_z 功能：完全平方差值
 - bytes2gray 功能：以格雷码形式编码
 - gray2bytes 功能：解码格雷码
-- base_conversion 功能：进制转换将十进制x转换成y进制
+- base_conversion_dex 功能：进制转换将十进制x转换成y进制
 - base_conversion 功能：进制转换将二进制str x转换成十进制
 - factorial_recursion 功能：阶乘
 - fibonacci_recursion 功能：求斐波那契的第n项值
@@ -45,6 +45,7 @@ pip install mypytool
 - 0.2
   - main.py
     - 移除了 `fast_pow` 和 `pow`，请使用 `**` 或 `math.pow`
+    - 移除了 `factorial_recursion`，请使用 `math.factorial`
     - 移除了 `swap`, `swap1` 和 `swap2`
     - 调整了 `perfect_square_plus_gs` / `perfect_square_plus_z` / `perfect_square_sub_gs` / `perfect_square_sub_z`
       - 所有参数列表由 `(x, y)` 改为 `(a, b)`
@@ -54,8 +55,9 @@ pip install mypytool
     - 移除了 `glm2bin` 函数，请使用 `list(map(int, bin(int.from_bytes(gray2bytes(int("".join(map(str, )), base=2).to_bytes())))[2:]))`
     - 移除了 `glm2dex` 函数，请使用 `int.from_bytes(gray2bytes(int("".join(map(str, )), base=2).to_bytes()))`
   - date.py
-    - 移除了 leap_year，请使用 calendar.isleap
-    - 重命名 month_day -> month_length，并且现在这个函数不再具有默认值
+    - 移除了 `leap_year` ，请使用 `calendar.isleap`
+    - 移除了 `month_day` ，请使用 `calendar.weekday`
+    - 软弃用了 `month_length` ，请使用 `calendar._monthlen`
   - linked_list.py
     - 重命名 General_Linked_list -> GeneralLinkedList
     - 重命名 Cycle_Linked_list -> CycleLinkedList
