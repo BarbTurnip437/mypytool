@@ -51,18 +51,16 @@ pip install mypytool
       - 所有参数列表由 `(x, y)` 改为 `(a, b)`
       - `perfect_square_plus_gs` / `perfect_square_sub_gs` 将应当返回一个合法的python表达式
     - 添加了 `bytes2gray` 和 `gray2bytes` 函数，作用稍后提到
-    - 移除了 `glm` 函数，请使用 `list(map(int, bin(int.from_bytes(bytes2gray(int.to_bytes())))[2:]))`（这恰巧说明了之前的实现有多么的不正确）
+    - 移除了 `glm` 函数，请使用 `list(map(int, bin(int.from_bytes(bytes2gray(int.to_bytes())))[2:]))`
     - 移除了 `glm2bin` 函数，请使用 `list(map(int, bin(int.from_bytes(gray2bytes(int("".join(map(str, )), base=2).to_bytes())))[2:]))`
     - 移除了 `glm2dex` 函数，请使用 `int.from_bytes(gray2bytes(int("".join(map(str, )), base=2).to_bytes()))`
-  - date.py
-    - 移除了 `leap_year` ，请使用 `calendar.isleap`
-    - 移除了 `month_day` ，请使用 `calendar.weekday`
-    - 软弃用了 `month_length` ，请使用 `calendar._monthlen`
+      - （这恰巧说明了之前的实现有多么的不正确）
   - linked_list.py
     - 重命名 General_Linked_list -> GeneralLinkedList
     - 重命名 Cycle_Linked_list -> CycleLinkedList
   - graghic.py
     - 更新了 graghic.py 的内部实现，变化较大
   - 移除了整个 stack.py，请使用列表
-  - 移除了整个 queue.py，请使用 queue.Queue
-  - 移除了整个 sort.py，请使用 sorted
+  - 移除了整个 date.py，请使用 `calendar` 库
+  - 移除了整个 queue.py，请使用 `queue.Queue`
+  - 移除了整个 sort.py，请使用 `sorted`

@@ -79,7 +79,3 @@ def fibonacci_recursion(n: int):
 
 def pow_transform(x, y, n=2) -> str:
     return f"{x**n}**{y // n}"
-
-
-if __name__ == "__main__":
-    ...

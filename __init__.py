@@ -3,7 +3,6 @@ __author__ = "Tutu"
 __name__ = "mypytool"
 
 from .graphic import *
-from .date import *
 from .main import *
 from .linked_list import *
 
