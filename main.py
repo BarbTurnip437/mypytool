@@ -1,4 +1,7 @@
-# region perfect_square_blah_blah_blah
+from math import sqrt
+
+
+# region perfect_square_*
 def perfect_square_plus_gs(a, b) -> str:
     """完全平方和公式
 
@@ -56,24 +59,29 @@ def gray2bytes(data: bytes) -> bytes:
     return bytes(result)
 
 
-def base_conversion(x, y):
-    l = []  # noqa: E741
-    t = x
-    while t > 0:
-        l.append(t % y)
-        t //= y
-    l.reverse()
-    return l
+def base_conversion(n: int, target_base: int) -> str:
+    s = ""
+    while n > 0:
+        s += str(n % target_base)
+        n //= target_base
+    return s[::-1]
 
 
-def base_conversion_dex(x):
-    t3 = "".join(map(str, x))
-    return int(t3, 2)
+PHI = (1 + sqrt(5)) / 2
 
 
-def fibonacci_recursion(n: int):
-    if n <= 2:
+def fibonacci(n: complex) -> complex:
+    # https://en.wikipedia.org/wiki/Fibonacci_sequence#Binet's_formula
+    return (PHI**n - (-PHI)**n) / sqrt(5)  # fmt: skip
+
+
+def fibonacci_recursion(n: int) -> int:
+    if n < 0:
+        # 报错是直接从 math.factorial 上复制的
+        raise ValueError("fibonacci_recursion() not defined for negative values")
+    elif n <= 2:
         return 1
+
     return fibonacci_recursion(n - 1) + fibonacci_recursion(n - 2)
 
 

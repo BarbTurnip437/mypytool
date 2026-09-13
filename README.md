@@ -16,8 +16,7 @@ pip install mypytool
 - perfect_square_sub_z 功能：完全平方差值
 - bytes2gray 功能：以格雷码形式编码
 - gray2bytes 功能：解码格雷码
-- base_conversion_dex 功能：进制转换将十进制x转换成y进制
-- base_conversion 功能：进制转换将二进制str x转换成十进制
+- base_conversion 功能：将x转换成y进制
 - factorial_recursion 功能：阶乘
 - fibonacci_recursion 功能：求斐波那契的第n项值
 
@@ -43,10 +42,14 @@ pip install mypytool
 ## 更新日志
 
 - 0.2
+  - 直接导入 `mypytool` 时不会再导入 `graghic.py` 和 `linked_list.py` 了
   - main.py
+    - 加入了 `fibonacci` 函数。终于！困扰在人们心中斐波那契数列的第0.5项是什么的问题终于被解决了
     - 移除了 `fast_pow` 和 `pow`，请使用 `**` 或 `math.pow`
     - 移除了 `factorial_recursion`，请使用 `math.factorial`
+    - 移除了 `base_conversion_dex`，请使用 `int("".join(map(str, x)), 2)`
     - 移除了 `swap`, `swap1` 和 `swap2`
+    - `base_conversion` 现在是 `base_conversion(n: int, target_base: int) -> str` 而非 `base_conversion(x: int, y: int) -> list[int]`
     - 调整了 `perfect_square_plus_gs` / `perfect_square_plus_z` / `perfect_square_sub_gs` / `perfect_square_sub_z`
       - 所有参数列表由 `(x, y)` 改为 `(a, b)`
       - `perfect_square_plus_gs` / `perfect_square_sub_gs` 将应当返回一个合法的python表达式
@@ -61,6 +64,6 @@ pip install mypytool
   - graghic.py
     - 更新了 graghic.py 的内部实现，变化较大
   - 移除了整个 stack.py，请使用列表
-  - 移除了整个 date.py，请使用 `calendar` 库
+  - 移除了整个 date.py，请使用 `calendar` 标准库
   - 移除了整个 queue.py，请使用 `queue.Queue`
   - 移除了整个 sort.py，请使用 `sorted`
