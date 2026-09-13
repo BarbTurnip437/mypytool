@@ -10,34 +10,29 @@ pip install mypytool
 
 ### main.py
 
-- perfect_square_plus_gs 功能：完全平方和公式
-- perfect_square_plus_z 功能：完全平方和值
-- perfect_square_sub_gs 功能：完全平方差公式
-- perfect_square_sub_z 功能：完全平方差值
-- bytes2gray 功能：以格雷码形式编码
-- gray2bytes 功能：解码格雷码
-- base_conversion 功能：将x转换成y进制
-- factorial_recursion 功能：阶乘
-- fibonacci_recursion 功能：求斐波那契的第n项值
-
-### date.py
-
-- month_first_day 功能：求当前月第一天的星期
-- month_length 功能：求月份天数
+- perfect_square_plus_gs 完全平方和公式
+- perfect_square_plus_z 完全平方和值
+- perfect_square_sub_gs 完全平方差公式
+- perfect_square_sub_z 完全平方差值
+- bytes2gray 以格雷码形式编码
+- gray2bytes 解码格雷码
+- base_conversion 将x转换成y进制
+- fibonacci_recursion 求斐波那契的第n项值
+- fibonacci [公式](https://en.wikipedia.org/wiki/Fibonacci_sequence#Closed-form_expression)求斐波那契数列。由于浮点数精度问题，计算的结果会极为不正确
 
 ### linked_list.py
 
-- class GeneralLinkedList 功能：单向链表
-- class CycleLinkedList 功能：循环链表
+- class GeneralLinkedList 单向链表
+- class CycleLinkedList 循环链表
 
 ### graghic.py
 
-- class Circle 功能：圆
-- class Square 功能：正方形
-- class Rectangle 功能：长方形
-- class Triangle 功能：三角形
-- class Parallelogram 功能：平行四边形
-- class Trapezoid 功能：梯形
+- class Circle 圆
+- class Square 正方形
+- class Rectangle 长方形
+- class Triangle 三角形
+- class Parallelogram 平行四边形
+- class Trapezoid 梯形
 
 ## 更新日志
 
@@ -45,6 +40,7 @@ pip install mypytool
   - 直接导入 `mypytool` 时不会再导入 `graghic.py` 和 `linked_list.py` 了
   - main.py
     - 加入了 `fibonacci` 函数。终于！困扰在人们心中斐波那契数列的第0.5项是什么的问题终于被解决了
+      - 由于浮点数精度问题，计算的结果会极为不正确（小声）
     - 移除了 `fast_pow` 和 `pow`，请使用 `**` 或 `math.pow`
     - 移除了 `factorial_recursion`，请使用 `math.factorial`
     - 移除了 `base_conversion_dex`，请使用 `int("".join(map(str, x)), 2)`

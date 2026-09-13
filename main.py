@@ -71,7 +71,8 @@ PHI = (1 + sqrt(5)) / 2
 
 
 def fibonacci(n: complex) -> complex:
-    # https://en.wikipedia.org/wiki/Fibonacci_sequence#Binet's_formula
+    """由于浮点数精度问题，计算的结果会极为不正确（）"""
+    # https://en.wikipedia.org/wiki/Fibonacci_sequence#Closed-form_expression
     return (PHI**n - (-PHI)**n) / sqrt(5)  # fmt: skip
 
 
